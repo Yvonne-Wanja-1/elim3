@@ -6,6 +6,9 @@ import '../features/about/presentation/about_page.dart';
 import '../features/contact/presentation/contact_page.dart';
 import '../features/research/presentation/research_page.dart';
 import '../features/get_involved/presentation/get_involved_page.dart';
+import '../features/profile/presentation/profile_page.dart';
+import '../features/gallery/presentation/gallery_page.dart';
+import 'widgets/elim_drawer_menu.dart';
 
 class ScaffoldWithNavigation extends StatelessWidget {
   const ScaffoldWithNavigation({
@@ -18,6 +21,7 @@ class ScaffoldWithNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const ElimDrawerMenu(),
       body: child,
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (index) {
@@ -97,6 +101,14 @@ final appRouter = GoRouter(
         GoRoute(
           path: '/contact',
           builder: (context, state) => const ContactPage(),
+        ),
+        GoRoute(
+          path: '/profile',
+          builder: (context, state) => const ProfilePage(),
+        ),
+        GoRoute(
+          path: '/gallery',
+          builder: (context, state) => const GalleryPage(),
         ),
       ],
     ),
