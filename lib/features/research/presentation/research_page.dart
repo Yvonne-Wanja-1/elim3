@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../shared/widgets/elim_app_bar.dart';
+import '../../../shared/widgets/elim_drawer_menu.dart';
 import '../../../config/theme.dart';
 
 class ResearchPage extends StatelessWidget {
@@ -227,8 +229,11 @@ class ResearchPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {
-                // TODO: Open publication link
+              onPressed: () async {
+                final url = Uri.parse('https://elimtrust.org/publications/community-trauma-healing-2025.pdf');
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                }
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: ElimTheme.primaryBlue,

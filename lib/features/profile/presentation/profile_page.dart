@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../shared/widgets/elim_app_bar.dart';
+import '../../../shared/widgets/elim_drawer_menu.dart';
 import '../../../config/theme.dart';
+import '../../../shared/widgets/dialogs.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -9,6 +12,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ElimAppBar(title: 'Profile'),
+      drawer: const ElimDrawerMenu(),
       body: SingleChildScrollView(
         child: Column(
           children: [

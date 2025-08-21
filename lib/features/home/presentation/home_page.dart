@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../shared/widgets/elim_app_bar.dart';
+import '../../../shared/widgets/elim_drawer_menu.dart';
 import '../../../config/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,6 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ElimAppBar(title: 'Elim Trust Organization'),
+      drawer: const ElimDrawerMenu(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -53,9 +56,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: () {
-                // Navigate to Get Involved page
-              },
+              onPressed: () => context.go('/get-involved'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: ElimTheme.primaryGreen,
                 padding:
@@ -183,9 +184,7 @@ class HomePage extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           TextButton(
-            onPressed: () {
-              // Navigate to program details
-            },
+            onPressed: () => context.go('/programs'),
             child: Text(
               'Learn More',
               style: TextStyle(color: color),

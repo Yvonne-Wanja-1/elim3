@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../shared/widgets/elim_app_bar.dart';
+import '../../../shared/widgets/elim_drawer_menu.dart';
 import '../../../config/theme.dart';
 
 class GalleryPage extends StatelessWidget {
@@ -9,6 +10,7 @@ class GalleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ElimAppBar(title: 'Gallery'),
+      drawer: const ElimDrawerMenu(),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
